@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 需求
+  用面向对象的方法写,方便后期添加新功能
+  适配移动端
+    需要添加功能
+  1.宇航员的运动方式应该更灵活 
+  (11.23实现了键盘控制移动与动力感应移动,还需要添加touchmove事件)
+  2.宇航员可以发射子弹
+  (11.23实现了子弹的发射,还需调整子弹的生成几率与后期收获强力武器时子弹的速度
+
+  11.24实现了陨石级别的差异化,还需要计算游戏时间,还需要拾取随机生成的字母
+  )
+
+
+3.11.26添加了火力,获得火力后可以发射3排子弹
+4.红色飞机爆炸后会掉落星星
+10.字母图片预加载问题1126
+
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <script>
+    (function() {
+        var Ratio = 1 / window.devicePixelRatio;
+        document.write('<meta name="viewport" content="width=device-width, initial-scale=' + Ratio + ',minimum-scale=' + Ratio + ',maximum-scale=' + Ratio + ',user-scalable=no"/>');
+        var html = document.getElementsByTagName('html')[0];
+        var pageWidth = html.getBoundingClientRect().width;
+        html.style.fontSize = pageWidth / 16 + "px";
+    })();
+    </script>
+    <link rel="shortcut icon" href="css/img/www.ico.la_69dde9bc698e817d2dc653c03ce25650_64X64.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/css.css">
+    <title>rescue wings</title>
+</head>
+<body>
+<div id="wrap">
+	<canvas id="mycanvas">您的浏览器不支持canvas</canvas>
+	<canvas id="mycanvas2" >您的浏览器不支持canvas</canvas>
+	<canvas id="mycanvas3">您的浏览器不支持canvas</canvas>	
+	<div id="end">
+
+		<img src="css/image/gamewin.png" alt="">
+		<span id="starNum"></span>
+		<span id="flyTime"></span>
+		<span id="score"></span>
+		<span id="restart"></span>		
+		<span class="finger"></span>
+		<span id="restart2"></span>
+	</div>
+	<div id="start">
+		<span class="finger"></span>
+		<span id="play"></span>
+		<span id="setting"></span>
+		<div id="tip"></div>
+		<img src="css/image/home.png" alt="">
+	</div>
+	<div id="getready">
+		<span id="setout" class="ready"></span>
+		<img src="css/image/getreadyBg.png" alt="">
+	</div>
+	<div id="help">		
+		<span class="finger"></span>
+		<span class="back"></span>
+		<img src="css/img/hmbbxia.gif" alt="">
+	</div>
+	
+</div>
+<div id="tipWrap">
+	<img  id="text" src="css/image/tipWrap.png" alt="">
+	<img id="pic" src="css/image/yame.gif" alt="">
+</div>
+</body>
+</html>
+<script language="javascript" src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+<script language="javascript" src="js/m.touch.js" type="text/javascript"></script>
+<script language="javascript" src="js/data.js" type="text/javascript"></script>
+<script language="javascript" src="js/js.js" type="text/javascript"></script>
+
+<script language="javascript" src="js/class.js" type="text/javascript"></script>
+<script language="javascript" src="js/draw.js" type="text/javascript"></script>
+<script language="javascript" src="js/update.js" type="text/javascript"></script>
+<script language="javascript" src="js/collide.js" type="text/javascript"></script>
+
+
+
+
